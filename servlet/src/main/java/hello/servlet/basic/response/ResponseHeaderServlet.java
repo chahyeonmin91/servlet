@@ -22,9 +22,15 @@ public class ResponseHeaderServlet extends HttpServlet {
         response.setHeader("Pragma", "no-cache");
         response.setHeader("my-header","hello");
 
+        content(response);
+
         PrintWriter writer = response.getWriter();
         writer.println("ok");
-
-
     }
+
+    private void content(HttpServletResponse response) {
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
+    }
+
 }
