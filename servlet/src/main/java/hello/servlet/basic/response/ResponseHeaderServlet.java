@@ -2,6 +2,7 @@ package hello.servlet.basic.response;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,5 +33,17 @@ public class ResponseHeaderServlet extends HttpServlet {
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
     }
+
+    private void cookie(HttpServletResponse response) {
+        Cookie cookie = new Cookie("myCookie", "good");
+        cookie.setMaxAge(600);
+        response.addCookie(cookie);
+    }
+
+    private void redirect(HttpServletResponse response) throws IOException {
+        response.setStatus(HttpServletResponse.SC_FOUND);
+        response.setHeader("Location", "/basic/hello-form.html");
+    }
+
 
 }
