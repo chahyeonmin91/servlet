@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/springgmvc/v2/members")
+@RequestMapping("/springmvc/v2/members")
 public class SpringMemberFormControllerV2 {
     private MemberRepository memberRepository = MemberRepository.getInstance();
 

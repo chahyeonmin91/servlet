@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/springgmvc/v3/members")
+@RequestMapping("/springmvc/v3/members")
 public class SpringMemberFormControllerV3 {
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
